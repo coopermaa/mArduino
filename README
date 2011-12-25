@@ -1,0 +1,28 @@
+mArduino is a simple library for Arduino.
+mArduino uses mutltiple Arduinos and I2C Protocol to expand Arduino's IO capacity.
+
+By using mArduino, master arduino can read and write slave's I/O very straightforwardly.
+Master can make slave's LED in a nearly identical manner to writing an arduino sketch,
+for example, the following sketch will blink slave's LED:
+
+#include "Wire.h"      // You need to include both Wire.h and mArduino.h
+#include "mArduino.h"
+
+const int SLAVE_ADDRESS = 1;
+const int ledPin = 13;
+
+void setup()
+{
+  mArduino();            // join I2C bus as a Master    
+  pinMode(SLAVE_ADDRESS, ledPin, OUTPUT);  
+}  
+
+void loop() {
+  digitalWrite(SLAVE_ADDRESS, ledPin, HIGH);
+  delay(100);
+  digitalWrite(SLAVE_ADDRESS, ledPin, LOW);
+  delay(100);
+}
+
+For more information, see:
+http://coopermaa2nd.blogspot.com/2011/12/marduino-arduino-i2c.html
