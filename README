@@ -1,5 +1,5 @@
 mArduino is a simple library for Arduino.
-mArduino uses mutltiple Arduinos and I2C Protocol to expand Arduino's IO capacity.
+mArduino uses multiple Arduinos and I2C Protocol to expand Arduino's IO capacity.
 
 By using mArduino, master arduino can read and write slave's I/O very straightforwardly.
 Master can make slave's LED in a nearly identical manner to writing an arduino sketch,
